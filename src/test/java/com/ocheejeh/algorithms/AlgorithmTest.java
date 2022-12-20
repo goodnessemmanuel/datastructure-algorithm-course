@@ -24,4 +24,14 @@ class AlgorithmTest {
         );
     }
 
+    @Test
+    void shouldMatchBracketPairsUsingAStack() {
+        assertAll(
+                () -> assertEquals("valid", algorithm.matchingBracketsStack("[{}]")),
+                () -> assertEquals("valid", algorithm.matchingBracketsStack("(()())")),
+                () -> assertEquals("invalid", algorithm.matchingBracketsStack("[}")),
+                () -> assertEquals("invalid", algorithm.matchingBracketsStack("[()]))()")),
+                () -> assertEquals("valid", algorithm.matchingBracketsStack("[]{}({})"))
+        );
+    }
 }
